@@ -5,7 +5,7 @@ import(
 	"github.com/go-resty/resty/v2"
 	"github.com/spf13/viper"
 	"github.com/nu7hatch/gouuid"
-	"github.com/cooldrip/cstrftime"
+	"github.com/lestrrat-go/strftime"
 	"time"
 	"strings"
     "encoding/base64"
@@ -62,9 +62,8 @@ func Get_base_url(email string)(string){
 
 func get_hdr_date() (string){
 	then := time.Now().UTC()
-    then = then.Add(time.Duration(-5) * time.Hour)
-    then = then.Add(time.Duration(-30) * time.Minute)
-	out := cstrftime.Format("%a, %d %b %Y %H:%M:%S UTC", then)
+    f, _ := strftime.New("%a, %d %b %Y %H:%M:%S UTC")
+    out := f.FormatString(then)
 	return out
 }
 

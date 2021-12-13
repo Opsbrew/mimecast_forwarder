@@ -7,7 +7,7 @@ COPY . .
 RUN go mod init github.com/opsbrew/mimecast_forwarder | true
 RUN go mod vendor
 RUN go get github.com/cooldrip/cstrftime
-RUN CGO_ENABLED=0 GOOS=linux go build main.go
+RUN GOOS=linux go build
 RUN ls
 FROM alpine
 
