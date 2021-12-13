@@ -19,6 +19,7 @@ import(
 func Get_base_url(email string)(string){
 	settings := viper.AllSettings()
 	fmt.Println("Getting the base URL")
+    fmt.Println(settings)
 
 	base_url:= "no_url"
 

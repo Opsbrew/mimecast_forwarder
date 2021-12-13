@@ -1,4 +1,4 @@
-FROM golang:1.17
+FROM golang:1.16
 
 WORKDIR /go/src/github.com/opsbrew/mimecast_forwarder
 
@@ -6,9 +6,9 @@ COPY . .
 
 RUN go mod init github.com/opsbrew/mimecast_forwarder | true
 RUN go mod vendor
-RUN go get github.com/cooldrip/cstrftime
-RUN GOOS=linux go build
+RUN CGO_ENABLED=0 GOOS=linux go build -mod=vendor
 RUN ls
+
 FROM alpine
 
 WORKDIR /app
@@ -19,5 +19,5 @@ RUN addgroup -S myawesomegroup
 RUN adduser -S myawesomeuser -G myawesomegroup
 USER myawesomeuser
 
-EXPOSE 8080
-ENTRYPOINT [ "./mimecast_forwarder" ]
+CMD [ "./mimecast_forwarder","start" ]
+# CMD [ "sleep","3000" ]

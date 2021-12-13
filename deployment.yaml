@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mimecast-forwarder
+  # namespace: opsbrew-monitoring
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mimecast-forwarder
+  template:
+    metadata:
+      labels:
+        app: mimecast-forwarder
+    spec:
+      containers:
+        - name: mimecast-forwarder
+          image: agberoz/mimecast:latest
+          resources:
+            limits:
+              memory: "500Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+          volumeMounts:
+            - name: configs
+              mountPath: /app/config
+      volumes:
+        - name: configs
+          configMap:
+            name: mimecast-config
+
+
+
+
+
+

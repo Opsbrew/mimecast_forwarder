@@ -41,15 +41,15 @@ func init() {
 }
 
 func initConfig() {
-	configFile = "./mimecast-cli.yaml"
-	if _, err := os.Stat(configFile); os.IsNotExist(err) {
-		os.Create(configFile)
-	}
+	fmt.Println("Config init")
+	configFile = "./config/mimecast-cli.yaml"
 	viper.SetConfigType("yaml")
 	viper.SetConfigFile(configFile)
 
 	
 	viper.AutomaticEnv()
+
+	fmt.Println(viper.AllSettings())
 
 	if err := viper.ReadInConfig(); err == nil {
 		fmt.Println("Using configuration file: ", viper.ConfigFileUsed())

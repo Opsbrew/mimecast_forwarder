@@ -26,8 +26,9 @@ var addCmd = &cobra.Command{
 	Long: `Start the forwarder`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("Checking remote syslog connection")
-		connection := helper.Raw_connect()
-		if(connection){
+		fmt.Println("From here")
+		// connection := helper.Raw_connect()
+		if(true){
 			fmt.Println("Started")
 			base_url := helper.Get_base_url("email")
 			if(base_url=="no_url"){
