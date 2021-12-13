@@ -40,7 +40,7 @@ func init() {
 }
 
 func initConfig() {
-	configFile = "./mimecast-cli.yml"
+	configFile = "./mimecast-cli.yaml"
 	if _, err := os.Stat(configFile); os.IsNotExist(err) {
 		os.Create(configFile)
 	}
