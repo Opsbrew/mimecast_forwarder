@@ -1,0 +1,8 @@
+MM_APP_ID: ""
+MM_APP_KEY: ""
+MM_URI: "/api/audit/get-siem-logs"
+MM_EMAIL_ADDRESS: ""
+MM_ACCESS_KEY: ""
+MM_SECRET_KEY: ""
+REMOTE_SYSLOG_SERVER: "127.0.0.1"
+PORT: "5050"
