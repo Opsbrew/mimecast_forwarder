@@ -1,2 +1,4 @@
 checkpoint
 mimecast-*
+go.mod
+go.sum
