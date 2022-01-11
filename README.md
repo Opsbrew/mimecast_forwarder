@@ -18,4 +18,4 @@ add a .env to your directory
 - PORT: "5003"
 
 
-`go run main.go`
+run `go run main.go start`
