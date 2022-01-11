@@ -16,3 +16,6 @@ add a .env to your directory
 - MM_SECRET_KEY: ""
 - REMOTE_SYSLOG_SERVER: ""
 - PORT: "5003"
+
+
+`go run main.go`
