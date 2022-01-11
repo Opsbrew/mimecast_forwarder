@@ -18,4 +18,6 @@ add a .env to your directory
 - PORT: "5003"
 
 
+for getting credentials https://integrations.mimecast.com/documentation/api-overview/authentication-scripts-server-apps/
+
 run `go run main.go start`
