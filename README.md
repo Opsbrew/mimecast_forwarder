@@ -1,7 +1,7 @@
 # mimecast_forwarder
 
 
-###### Mimecast is a SaaS-based email management platform enabling companies to administer business communications and data.
+## Mimecast is a SaaS-based email management platform enabling companies to administer business communications and data.
 
 
 Mimecast forwarder can forward your mimecast logs to Any syslog forwarders easily.
